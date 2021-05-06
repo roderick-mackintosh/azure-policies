@@ -1,0 +1,37 @@
+{
+ "properties": {
+  "displayName": "vm-naming-convention",
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+   "createdBy": "f037dcac-8429-4215-8c2b-403e29e64e78",
+   "createdOn": "2021-05-06T08:36:38.1280464Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "allowedLocations": {
+    "type": "Array",
+    "metadata": {
+     "displayName": "Allowed locations",
+     "description": "The list of allowed locations for resources.",
+     "strongType": "location"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "not": {
+     "field": "location",
+     "in": "[parameters('allowedLocations')]"
+    }
+   },
+   "then": {
+    "effect": "audit"
+   }
+  }
+ },
+ "id": "/subscriptions/1dcdb90d-5642-4c84-be4d-0f82495b78c9/providers/Microsoft.Authorization/policyDefinitions/75144372-c674-429b-9662-05095a60ada3",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "75144372-c674-429b-9662-05095a60ada3"
+}
